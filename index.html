@@ -164,6 +164,103 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Android/String" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/Android/String/">String</a>
+    </h1>
+  
+
+        
+        <a href="/Android/String/" class="archive-article-date">
+  	<time datetime="2016-02-24T13:21:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-02-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>###<strong>String</strong></p>
+<ul>
+<li>String一旦被赋值，便不能更改其指向的字符对象，如果更改，则会指向一个新的字符对象。</li>
+<li>当String的变量作为参数传递到函数中，即使函数中改变了它的值，但对函数外是没有影响。（这个是String的特例，其他引用类型一般都会产生影响的）</li>
+</ul>
+<p>###<strong>StringBuffer</strong></p>
+<p>####StringBuffer的构造函数 </p>
+<ul>
+<li>StringBuffer()  </li>
+<li>StringBuffer(int size)  </li>
+<li>StringBuffer(String str) </li>
+<li>StringBuffer(CharSequence chars)</li>
+</ul>
+<p>####length()和capacity()<br>length()计算StringBuffer当前长度,而整个可分配空间通过capacity()方法得到。</p>
+<p>####ensureCapacity() 设置缓冲区的大小<br>void ensureCapacity(int capacity)</p>
+<p>####setLength() 设置缓冲区的长度<br>void setLength(int len)</p>
+<p>charAt()和setCharAt()<br>char charAt(int where)<br>void setCharAt(int where,char ch)</p>
+<p>####getChars()<br>void getChars(int sourceStart,int sourceEnd,char target[],int targetStart)</p>
+<p>####append() 可把任何类型数据的字符串表示连接到调用它的StringBuffer对象的末尾。<br>例：int a=42;<br>StringBuffer sb=new StringBuffer(40);<br>String s=sb.append(”a=”).append(a).append(”!”).toString(); </p>
+<p>####insert() 插入字符串<br>StringBuffer insert(int index,String str)<br>StringBuffer insert(int index,char ch)<br>StringBuffer insert(int index,Object obj)<br>index指定将字符串插入到StringBuffer对象中的位置的下标。</p>
+<p>####reverse() 颠倒StringBuffer对象中的字符<br>StringBuffer reverse()</p>
+<p>####delete()和deleteCharAt() 删除字符<br>StringBuffer delete(int startIndex,int endIndex)<br>StringBuffer deleteCharAt(int loc)</p>
+<p>####replace() 替换<br>StringBuffer replace(int startIndex,int endIndex,String str)</p>
+<p>####substring() 截取子串<br>String substring(int startIndex)<br>String substring(int startIndex,int endIndex)</p>
+<p>###<strong>字符串转数字的函数</strong><br>【<a href="http://hi.baidu.com/yangyxd/item/2a4ba1fbd4a5d24a922af204" target="_blank" rel="external"><strong>原文出处</strong></a>】</p>
+<p>####转换字符串为数字<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/** 转换字符串为数字 */</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">strToInt</span>(<span class="params">String <span class="keyword">value</span>, <span class="keyword">int</span> defaultValue</span>) </span>&#123; </div><div class="line">    <span class="keyword">try</span> &#123; </div><div class="line">        <span class="keyword">return</span> Integer.valueOf(<span class="keyword">value</span>); </div><div class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123; </div><div class="line">        <span class="keyword">return</span> defaultValue; </div><div class="line">    &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>####转换字符串为数字</p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/** 转换字符串为数字 */</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">long</span> <span class="title">strToInt</span>(<span class="params">String <span class="keyword">value</span>, <span class="keyword">long</span> defaultValue</span>) </span>&#123; </div><div class="line">    <span class="keyword">try</span> &#123; </div><div class="line">        <span class="keyword">return</span> Long.valueOf(<span class="keyword">value</span>); </div><div class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123; </div><div class="line">        <span class="keyword">return</span> defaultValue; </div><div class="line">    &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>####转换16进制字符串为数字<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/** 转换16进制字符串为数字 */</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">hexToInt</span>(<span class="params">String <span class="keyword">value</span>, <span class="keyword">int</span> defaultValue</span>) </span>&#123; </div><div class="line">    <span class="keyword">try</span> &#123; </div><div class="line">        <span class="keyword">return</span> Integer.parseInt(<span class="keyword">value</span>, <span class="number">16</span>); </div><div class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123; </div><div class="line">        <span class="keyword">return</span> defaultValue; </div><div class="line">    &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>####转换16进制字符串为数字<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/** 转换16进制字符串为数字 */</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">long</span> <span class="title">hexToInt</span>(<span class="params">String <span class="keyword">value</span>, <span class="keyword">long</span> defaultValue</span>) </span>&#123; </div><div class="line">    <span class="keyword">try</span> &#123; </div><div class="line">        <span class="keyword">return</span> Long.parseLong(<span class="keyword">value</span>, <span class="number">16</span>); </div><div class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123; </div><div class="line">        <span class="keyword">return</span> defaultValue; </div><div class="line">    &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>####转换字符串为数字<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/** 转换字符串为数字 */</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">float</span> <span class="title">strToFloat</span>(<span class="params">String <span class="keyword">value</span>, <span class="keyword">float</span> defaultValue</span>) </span>&#123; </div><div class="line">    <span class="keyword">try</span> &#123; </div><div class="line">        <span class="keyword">return</span> Float.valueOf(<span class="keyword">value</span>); </div><div class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123; </div><div class="line">        <span class="keyword">return</span> defaultValue; </div><div class="line">    &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>####转换字符串为数字<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/** 转换字符串为数字 */</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">strToDouble</span>(<span class="params">String <span class="keyword">value</span>, <span class="keyword">double</span> defaultValue</span>) </span>&#123; </div><div class="line">    <span class="keyword">try</span> &#123; </div><div class="line">        <span class="keyword">return</span> Double.valueOf(<span class="keyword">value</span>); </div><div class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123; </div><div class="line">        <span class="keyword">return</span> defaultValue; </div><div class="line">    &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">String</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/Android/String/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-Android/TextView／EditText" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -314,103 +411,6 @@
 
 
   
-    <article id="post-Android/String" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/Android/String/">String</a>
-    </h1>
-  
-
-        
-        <a href="/Android/String/" class="archive-article-date">
-  	<time datetime="2016-02-24T13:21:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-02-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>###<strong>String</strong></p>
-<ul>
-<li>String一旦被赋值，便不能更改其指向的字符对象，如果更改，则会指向一个新的字符对象。</li>
-<li>当String的变量作为参数传递到函数中，即使函数中改变了它的值，但对函数外是没有影响。（这个是String的特例，其他引用类型一般都会产生影响的）</li>
-</ul>
-<p>###<strong>StringBuffer</strong></p>
-<p>####StringBuffer的构造函数 </p>
-<ul>
-<li>StringBuffer()  </li>
-<li>StringBuffer(int size)  </li>
-<li>StringBuffer(String str) </li>
-<li>StringBuffer(CharSequence chars)</li>
-</ul>
-<p>####length()和capacity()<br>length()计算StringBuffer当前长度,而整个可分配空间通过capacity()方法得到。</p>
-<p>####ensureCapacity() 设置缓冲区的大小<br>void ensureCapacity(int capacity)</p>
-<p>####setLength() 设置缓冲区的长度<br>void setLength(int len)</p>
-<p>charAt()和setCharAt()<br>char charAt(int where)<br>void setCharAt(int where,char ch)</p>
-<p>####getChars()<br>void getChars(int sourceStart,int sourceEnd,char target[],int targetStart)</p>
-<p>####append() 可把任何类型数据的字符串表示连接到调用它的StringBuffer对象的末尾。<br>例：int a=42;<br>StringBuffer sb=new StringBuffer(40);<br>String s=sb.append(”a=”).append(a).append(”!”).toString(); </p>
-<p>####insert() 插入字符串<br>StringBuffer insert(int index,String str)<br>StringBuffer insert(int index,char ch)<br>StringBuffer insert(int index,Object obj)<br>index指定将字符串插入到StringBuffer对象中的位置的下标。</p>
-<p>####reverse() 颠倒StringBuffer对象中的字符<br>StringBuffer reverse()</p>
-<p>####delete()和deleteCharAt() 删除字符<br>StringBuffer delete(int startIndex,int endIndex)<br>StringBuffer deleteCharAt(int loc)</p>
-<p>####replace() 替换<br>StringBuffer replace(int startIndex,int endIndex,String str)</p>
-<p>####substring() 截取子串<br>String substring(int startIndex)<br>String substring(int startIndex,int endIndex)</p>
-<p>###<strong>字符串转数字的函数</strong><br>【<a href="http://hi.baidu.com/yangyxd/item/2a4ba1fbd4a5d24a922af204" target="_blank" rel="external"><strong>原文出处</strong></a>】</p>
-<p>####转换字符串为数字<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/** 转换字符串为数字 */</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">strToInt</span>(<span class="params">String <span class="keyword">value</span>, <span class="keyword">int</span> defaultValue</span>) </span>&#123; </div><div class="line">    <span class="keyword">try</span> &#123; </div><div class="line">        <span class="keyword">return</span> Integer.valueOf(<span class="keyword">value</span>); </div><div class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123; </div><div class="line">        <span class="keyword">return</span> defaultValue; </div><div class="line">    &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>####转换字符串为数字</p>
-<figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/** 转换字符串为数字 */</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">long</span> <span class="title">strToInt</span>(<span class="params">String <span class="keyword">value</span>, <span class="keyword">long</span> defaultValue</span>) </span>&#123; </div><div class="line">    <span class="keyword">try</span> &#123; </div><div class="line">        <span class="keyword">return</span> Long.valueOf(<span class="keyword">value</span>); </div><div class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123; </div><div class="line">        <span class="keyword">return</span> defaultValue; </div><div class="line">    &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>####转换16进制字符串为数字<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/** 转换16进制字符串为数字 */</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">hexToInt</span>(<span class="params">String <span class="keyword">value</span>, <span class="keyword">int</span> defaultValue</span>) </span>&#123; </div><div class="line">    <span class="keyword">try</span> &#123; </div><div class="line">        <span class="keyword">return</span> Integer.parseInt(<span class="keyword">value</span>, <span class="number">16</span>); </div><div class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123; </div><div class="line">        <span class="keyword">return</span> defaultValue; </div><div class="line">    &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>####转换16进制字符串为数字<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/** 转换16进制字符串为数字 */</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">long</span> <span class="title">hexToInt</span>(<span class="params">String <span class="keyword">value</span>, <span class="keyword">long</span> defaultValue</span>) </span>&#123; </div><div class="line">    <span class="keyword">try</span> &#123; </div><div class="line">        <span class="keyword">return</span> Long.parseLong(<span class="keyword">value</span>, <span class="number">16</span>); </div><div class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123; </div><div class="line">        <span class="keyword">return</span> defaultValue; </div><div class="line">    &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>####转换字符串为数字<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/** 转换字符串为数字 */</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">float</span> <span class="title">strToFloat</span>(<span class="params">String <span class="keyword">value</span>, <span class="keyword">float</span> defaultValue</span>) </span>&#123; </div><div class="line">    <span class="keyword">try</span> &#123; </div><div class="line">        <span class="keyword">return</span> Float.valueOf(<span class="keyword">value</span>); </div><div class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123; </div><div class="line">        <span class="keyword">return</span> defaultValue; </div><div class="line">    &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>####转换字符串为数字<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/** 转换字符串为数字 */</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">strToDouble</span>(<span class="params">String <span class="keyword">value</span>, <span class="keyword">double</span> defaultValue</span>) </span>&#123; </div><div class="line">    <span class="keyword">try</span> &#123; </div><div class="line">        <span class="keyword">return</span> Double.valueOf(<span class="keyword">value</span>); </div><div class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123; </div><div class="line">        <span class="keyword">return</span> defaultValue; </div><div class="line">    &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">String</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/Android/String/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
     <article id="post-Android/Android studio添加依赖库" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -458,11 +458,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Android Studio添加依赖库</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Android Studio添加依赖库</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
         		</li>
       		
 		</ul>
@@ -642,11 +642,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Android Scroll</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Android Scroll</a>
         		</li>
       		
 		</ul>
@@ -860,7 +860,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Android Scroll</a>
+                <a href="javascript:void(0)" class="js-tag color5">Android Studio添加依赖库</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -869,6 +869,14 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">File</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Android Scroll</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">String</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -881,14 +889,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">EditText</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">String</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Android Studio添加依赖库</a>
               </li>
             
             <div class="clearfix"></div>
