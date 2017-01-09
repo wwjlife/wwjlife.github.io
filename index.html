@@ -61,7 +61,7 @@
 	        
 				<li><a href="/随笔/">随笔</a></li>
 	        
-				<li><a href="/小故事／">小故事</a></li>
+				<li><a href="/小故事/">小故事</a></li>
 	        
 			</ul>
 		</nav>
@@ -147,7 +147,7 @@
 		        
 					<li style="width: 33.333333333333336%"><a href="/随笔/">随笔</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/小故事／">小故事</a></li>
+					<li style="width: 33.333333333333336%"><a href="/小故事/">小故事</a></li>
 		        
 				</ul>
 			</nav>
@@ -225,103 +225,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/随笔/最初的你还在么/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-Android/String" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/Android/String/">String</a>
-    </h1>
-  
-
-        
-        <a href="/Android/String/" class="archive-article-date">
-  	<time datetime="2016-02-24T13:21:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-02-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>###<strong>String</strong></p>
-<ul>
-<li>String一旦被赋值，便不能更改其指向的字符对象，如果更改，则会指向一个新的字符对象。</li>
-<li>当String的变量作为参数传递到函数中，即使函数中改变了它的值，但对函数外是没有影响。（这个是String的特例，其他引用类型一般都会产生影响的）</li>
-</ul>
-<p>###<strong>StringBuffer</strong></p>
-<p>####StringBuffer的构造函数 </p>
-<ul>
-<li>StringBuffer()  </li>
-<li>StringBuffer(int size)  </li>
-<li>StringBuffer(String str) </li>
-<li>StringBuffer(CharSequence chars)</li>
-</ul>
-<p>####length()和capacity()<br>length()计算StringBuffer当前长度,而整个可分配空间通过capacity()方法得到。</p>
-<p>####ensureCapacity() 设置缓冲区的大小<br>void ensureCapacity(int capacity)</p>
-<p>####setLength() 设置缓冲区的长度<br>void setLength(int len)</p>
-<p>charAt()和setCharAt()<br>char charAt(int where)<br>void setCharAt(int where,char ch)</p>
-<p>####getChars()<br>void getChars(int sourceStart,int sourceEnd,char target[],int targetStart)</p>
-<p>####append() 可把任何类型数据的字符串表示连接到调用它的StringBuffer对象的末尾。<br>例：int a=42;<br>StringBuffer sb=new StringBuffer(40);<br>String s=sb.append(”a=”).append(a).append(”!”).toString(); </p>
-<p>####insert() 插入字符串<br>StringBuffer insert(int index,String str)<br>StringBuffer insert(int index,char ch)<br>StringBuffer insert(int index,Object obj)<br>index指定将字符串插入到StringBuffer对象中的位置的下标。</p>
-<p>####reverse() 颠倒StringBuffer对象中的字符<br>StringBuffer reverse()</p>
-<p>####delete()和deleteCharAt() 删除字符<br>StringBuffer delete(int startIndex,int endIndex)<br>StringBuffer deleteCharAt(int loc)</p>
-<p>####replace() 替换<br>StringBuffer replace(int startIndex,int endIndex,String str)</p>
-<p>####substring() 截取子串<br>String substring(int startIndex)<br>String substring(int startIndex,int endIndex)</p>
-<p>###<strong>字符串转数字的函数</strong><br>【<a href="http://hi.baidu.com/yangyxd/item/2a4ba1fbd4a5d24a922af204" target="_blank" rel="external"><strong>原文出处</strong></a>】</p>
-<p>####转换字符串为数字<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/** 转换字符串为数字 */</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">strToInt</span>(<span class="params">String <span class="keyword">value</span>, <span class="keyword">int</span> defaultValue</span>) </span>&#123; </div><div class="line">    <span class="keyword">try</span> &#123; </div><div class="line">        <span class="keyword">return</span> Integer.valueOf(<span class="keyword">value</span>); </div><div class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123; </div><div class="line">        <span class="keyword">return</span> defaultValue; </div><div class="line">    &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>####转换字符串为数字</p>
-<figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/** 转换字符串为数字 */</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">long</span> <span class="title">strToInt</span>(<span class="params">String <span class="keyword">value</span>, <span class="keyword">long</span> defaultValue</span>) </span>&#123; </div><div class="line">    <span class="keyword">try</span> &#123; </div><div class="line">        <span class="keyword">return</span> Long.valueOf(<span class="keyword">value</span>); </div><div class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123; </div><div class="line">        <span class="keyword">return</span> defaultValue; </div><div class="line">    &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>####转换16进制字符串为数字<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/** 转换16进制字符串为数字 */</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">hexToInt</span>(<span class="params">String <span class="keyword">value</span>, <span class="keyword">int</span> defaultValue</span>) </span>&#123; </div><div class="line">    <span class="keyword">try</span> &#123; </div><div class="line">        <span class="keyword">return</span> Integer.parseInt(<span class="keyword">value</span>, <span class="number">16</span>); </div><div class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123; </div><div class="line">        <span class="keyword">return</span> defaultValue; </div><div class="line">    &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>####转换16进制字符串为数字<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/** 转换16进制字符串为数字 */</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">long</span> <span class="title">hexToInt</span>(<span class="params">String <span class="keyword">value</span>, <span class="keyword">long</span> defaultValue</span>) </span>&#123; </div><div class="line">    <span class="keyword">try</span> &#123; </div><div class="line">        <span class="keyword">return</span> Long.parseLong(<span class="keyword">value</span>, <span class="number">16</span>); </div><div class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123; </div><div class="line">        <span class="keyword">return</span> defaultValue; </div><div class="line">    &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>####转换字符串为数字<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/** 转换字符串为数字 */</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">float</span> <span class="title">strToFloat</span>(<span class="params">String <span class="keyword">value</span>, <span class="keyword">float</span> defaultValue</span>) </span>&#123; </div><div class="line">    <span class="keyword">try</span> &#123; </div><div class="line">        <span class="keyword">return</span> Float.valueOf(<span class="keyword">value</span>); </div><div class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123; </div><div class="line">        <span class="keyword">return</span> defaultValue; </div><div class="line">    &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>####转换字符串为数字<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/** 转换字符串为数字 */</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">strToDouble</span>(<span class="params">String <span class="keyword">value</span>, <span class="keyword">double</span> defaultValue</span>) </span>&#123; </div><div class="line">    <span class="keyword">try</span> &#123; </div><div class="line">        <span class="keyword">return</span> Double.valueOf(<span class="keyword">value</span>); </div><div class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123; </div><div class="line">        <span class="keyword">return</span> defaultValue; </div><div class="line">    &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">String</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/Android/String/">展开全文 >></a>
         </p>
       
 
@@ -472,6 +375,103 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/Android/TextView／EditText/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-Android/String" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/Android/String/">String</a>
+    </h1>
+  
+
+        
+        <a href="/Android/String/" class="archive-article-date">
+  	<time datetime="2016-02-24T13:21:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-02-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>###<strong>String</strong></p>
+<ul>
+<li>String一旦被赋值，便不能更改其指向的字符对象，如果更改，则会指向一个新的字符对象。</li>
+<li>当String的变量作为参数传递到函数中，即使函数中改变了它的值，但对函数外是没有影响。（这个是String的特例，其他引用类型一般都会产生影响的）</li>
+</ul>
+<p>###<strong>StringBuffer</strong></p>
+<p>####StringBuffer的构造函数 </p>
+<ul>
+<li>StringBuffer()  </li>
+<li>StringBuffer(int size)  </li>
+<li>StringBuffer(String str) </li>
+<li>StringBuffer(CharSequence chars)</li>
+</ul>
+<p>####length()和capacity()<br>length()计算StringBuffer当前长度,而整个可分配空间通过capacity()方法得到。</p>
+<p>####ensureCapacity() 设置缓冲区的大小<br>void ensureCapacity(int capacity)</p>
+<p>####setLength() 设置缓冲区的长度<br>void setLength(int len)</p>
+<p>charAt()和setCharAt()<br>char charAt(int where)<br>void setCharAt(int where,char ch)</p>
+<p>####getChars()<br>void getChars(int sourceStart,int sourceEnd,char target[],int targetStart)</p>
+<p>####append() 可把任何类型数据的字符串表示连接到调用它的StringBuffer对象的末尾。<br>例：int a=42;<br>StringBuffer sb=new StringBuffer(40);<br>String s=sb.append(”a=”).append(a).append(”!”).toString(); </p>
+<p>####insert() 插入字符串<br>StringBuffer insert(int index,String str)<br>StringBuffer insert(int index,char ch)<br>StringBuffer insert(int index,Object obj)<br>index指定将字符串插入到StringBuffer对象中的位置的下标。</p>
+<p>####reverse() 颠倒StringBuffer对象中的字符<br>StringBuffer reverse()</p>
+<p>####delete()和deleteCharAt() 删除字符<br>StringBuffer delete(int startIndex,int endIndex)<br>StringBuffer deleteCharAt(int loc)</p>
+<p>####replace() 替换<br>StringBuffer replace(int startIndex,int endIndex,String str)</p>
+<p>####substring() 截取子串<br>String substring(int startIndex)<br>String substring(int startIndex,int endIndex)</p>
+<p>###<strong>字符串转数字的函数</strong><br>【<a href="http://hi.baidu.com/yangyxd/item/2a4ba1fbd4a5d24a922af204" target="_blank" rel="external"><strong>原文出处</strong></a>】</p>
+<p>####转换字符串为数字<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/** 转换字符串为数字 */</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">strToInt</span>(<span class="params">String <span class="keyword">value</span>, <span class="keyword">int</span> defaultValue</span>) </span>&#123; </div><div class="line">    <span class="keyword">try</span> &#123; </div><div class="line">        <span class="keyword">return</span> Integer.valueOf(<span class="keyword">value</span>); </div><div class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123; </div><div class="line">        <span class="keyword">return</span> defaultValue; </div><div class="line">    &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>####转换字符串为数字</p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/** 转换字符串为数字 */</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">long</span> <span class="title">strToInt</span>(<span class="params">String <span class="keyword">value</span>, <span class="keyword">long</span> defaultValue</span>) </span>&#123; </div><div class="line">    <span class="keyword">try</span> &#123; </div><div class="line">        <span class="keyword">return</span> Long.valueOf(<span class="keyword">value</span>); </div><div class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123; </div><div class="line">        <span class="keyword">return</span> defaultValue; </div><div class="line">    &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>####转换16进制字符串为数字<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/** 转换16进制字符串为数字 */</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">hexToInt</span>(<span class="params">String <span class="keyword">value</span>, <span class="keyword">int</span> defaultValue</span>) </span>&#123; </div><div class="line">    <span class="keyword">try</span> &#123; </div><div class="line">        <span class="keyword">return</span> Integer.parseInt(<span class="keyword">value</span>, <span class="number">16</span>); </div><div class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123; </div><div class="line">        <span class="keyword">return</span> defaultValue; </div><div class="line">    &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>####转换16进制字符串为数字<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/** 转换16进制字符串为数字 */</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">long</span> <span class="title">hexToInt</span>(<span class="params">String <span class="keyword">value</span>, <span class="keyword">long</span> defaultValue</span>) </span>&#123; </div><div class="line">    <span class="keyword">try</span> &#123; </div><div class="line">        <span class="keyword">return</span> Long.parseLong(<span class="keyword">value</span>, <span class="number">16</span>); </div><div class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123; </div><div class="line">        <span class="keyword">return</span> defaultValue; </div><div class="line">    &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>####转换字符串为数字<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/** 转换字符串为数字 */</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">float</span> <span class="title">strToFloat</span>(<span class="params">String <span class="keyword">value</span>, <span class="keyword">float</span> defaultValue</span>) </span>&#123; </div><div class="line">    <span class="keyword">try</span> &#123; </div><div class="line">        <span class="keyword">return</span> Float.valueOf(<span class="keyword">value</span>); </div><div class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123; </div><div class="line">        <span class="keyword">return</span> defaultValue; </div><div class="line">    &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>####转换字符串为数字<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/** 转换字符串为数字 */</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">strToDouble</span>(<span class="params">String <span class="keyword">value</span>, <span class="keyword">double</span> defaultValue</span>) </span>&#123; </div><div class="line">    <span class="keyword">try</span> &#123; </div><div class="line">        <span class="keyword">return</span> Double.valueOf(<span class="keyword">value</span>); </div><div class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123; </div><div class="line">        <span class="keyword">return</span> defaultValue; </div><div class="line">    &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">String</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/Android/String/">展开全文 >></a>
         </p>
       
 
@@ -752,103 +752,6 @@
 
 
   
-    <article id="post-Android/File操作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/Android/File操作/">File操作</a>
-    </h1>
-  
-
-        
-        <a href="/Android/File操作/" class="archive-article-date">
-  	<time datetime="2015-12-16T07:38:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-12-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>###获取总根</p>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">File</span>[] fileList=<span class="built_in">File</span>.listRoots();  </div><div class="line"><span class="comment">//返回fileList.length为1  </span></div><div class="line"><span class="comment">//fileList.getAbsolutePath()为"/"  </span></div><div class="line"><span class="comment">//这就是系统的总根</span></div></pre></td></tr></table></figure>
-<p>###打开总根目录</p>
-<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">File</span> file=new <span class="keyword">File</span>(<span class="string">"/"</span>);  </div><div class="line"><span class="keyword">File</span>[] fileList=file.listFiles();  </div><div class="line">//获取的目录中除了<span class="string">"/sdcard"</span>和<span class="string">"/system"</span>还有<span class="string">"/data"</span>、<span class="string">"/cache"</span>、<span class="string">"/dev"</span>等</div><div class="line">//Android的根目录并不像Symbian系统那样分为<span class="keyword">C</span>盘、<span class="keyword">D</span>盘、<span class="keyword">E</span>盘等  </div><div class="line">//Android是基于Linux的，只有目录，无所谓盘符</div></pre></td></tr></table></figure>
-<p>###获取系统存储根目录</p>
-<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">File</span> <span class="keyword">file</span>=Environment.getRootDirectory();//<span class="keyword">File</span> <span class="keyword">file</span>=<span class="keyword">new</span> <span class="keyword">File</span>(<span class="string">"/system"</span>);  </div><div class="line"><span class="keyword">File</span>[] fileList=<span class="keyword">file</span>.listFiles();  </div><div class="line">//这里说的系统仅仅指<span class="string">"/system"</span>  </div><div class="line">//不包括外部存储的手机存储的范围远远大于所谓的系统存储</div></pre></td></tr></table></figure>
-<p>###获取SD卡存储根目录</p>
-<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">File</span> <span class="keyword">file</span>=Environment.getExternalStorageDirectory();//<span class="keyword">File</span> <span class="keyword">file</span>=<span class="keyword">new</span> <span class="keyword">File</span>(<span class="string">"/sdcard"</span>);  </div><div class="line"><span class="keyword">File</span>[] fileList=<span class="keyword">file</span>.listFiles();  </div><div class="line">//要获取SD卡首先要确认SD卡是否装载  </div><div class="line"><span class="built_in">boolean</span> <span class="keyword">is</span>=Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED);  </div><div class="line">//如果<span class="literal">true</span>，则已装载  </div><div class="line">//如果<span class="literal">false</span>，则未装载</div></pre></td></tr></table></figure>
-<p>###获取data根目录</p>
-<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">File</span> <span class="keyword">file</span>=Environment.getDataDirectory();//<span class="keyword">File</span> <span class="keyword">file</span>=<span class="keyword">new</span> <span class="keyword">File</span>(<span class="string">"/data"</span>);  </div><div class="line"><span class="keyword">File</span>[] fileList=<span class="keyword">file</span>.listFiles();  </div><div class="line">//由于data文件夹是android里一个非常重要的文件夹，所以一般权限是无法获取到文件的，即fileList.length返回为<span class="number">0</span></div></pre></td></tr></table></figure>
-<p>###获取私有文件路径</p>
-<figure class="highlight delphi"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Context context=this;<span class="comment">//首先，在Activity里获取context  </span></div><div class="line"><span class="keyword">File</span> <span class="keyword">file</span>=context.getFilesDir();  </div><div class="line"><span class="keyword">String</span> path=<span class="keyword">file</span>.getAbsolutePath();  </div><div class="line"><span class="comment">//此处返回的路劲为/data/data/包/files，其中的包就是我们建立的主Activity所在的包  </span></div><div class="line"><span class="comment">//我们可以看到这个路径也是在data文件夹下  </span></div><div class="line"><span class="comment">//程序本身是可以对自己的私有文件进行操作  </span></div><div class="line"><span class="comment">//程序中很多私有的数据会写入到私有文件路径下，这也是android为什么对data数据做保护的原因之一</span></div></pre></td></tr></table></figure>
-<p>###获取文件（夹）绝对路径、相对路劲、文件（夹）名、父目录</p>
-<figure class="highlight delphi"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">File</span> <span class="keyword">file</span>=……  </div><div class="line"><span class="keyword">String</span> relativePath=<span class="keyword">file</span>.getPath();<span class="comment">//相对路径  </span></div><div class="line"><span class="keyword">String</span> absolutePath=<span class="keyword">file</span>.getAbsolutePath();<span class="comment">//绝对路径  </span></div><div class="line"><span class="keyword">String</span> fileName=<span class="keyword">file</span>.getName();<span class="comment">//文件（夹）名  </span></div><div class="line"><span class="keyword">String</span> parentPath=<span class="keyword">file</span>.getParent();<span class="comment">//父目录</span></div></pre></td></tr></table></figure>
-<p>###列出文件夹下的所有文件和文件夹</p>
-<figure class="highlight delphi"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">File</span> <span class="keyword">file</span>=……  </div><div class="line"><span class="keyword">File</span>[] fileList=<span class="keyword">file</span>.listFiles();</div></pre></td></tr></table></figure>
-<p>###判断是文件还是文件夹</p>
-<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">File</span> <span class="keyword">file</span>=……  </div><div class="line"><span class="built_in">boolean</span> <span class="keyword">is</span>=<span class="keyword">file</span>.isDirectory();//<span class="literal">true</span>-是，<span class="literal">false</span>-否</div></pre></td></tr></table></figure>
-<p>###判断文件（夹）是否存在</p>
-<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">File</span> <span class="keyword">file</span>=……  </div><div class="line"><span class="built_in">boolean</span> <span class="keyword">is</span>=<span class="keyword">file</span>.exists();//<span class="literal">true</span>-是，<span class="literal">false</span>-否</div></pre></td></tr></table></figure>
-<p>###新建文件（夹）</p>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">File</span> file=……  </div><div class="line">oolean is=file.<span class="built_in">isDirectory</span>();<span class="comment">//判断是否为文件夹  </span></div><div class="line"><span class="comment">/*方法1*/</span>  </div><div class="line"><span class="built_in">if</span>(is)&#123;  </div><div class="line">    <span class="keyword">String</span> path=file.getAbsolutePath();  </div><div class="line">    <span class="keyword">String</span> name=<span class="string">"ABC"</span>;<span class="comment">//你要新建的文件夹名或者文件名  </span></div><div class="line">    <span class="keyword">String</span> pathx=path+name;  </div><div class="line">    <span class="built_in">File</span> filex=<span class="keyword">new</span> <span class="built_in">File</span>(pathx);  </div><div class="line">    <span class="keyword">boolean</span> is=filex.<span class="built_in">exists</span>();<span class="comment">//判断文件（夹）是否存在  </span></div><div class="line">    <span class="built_in">if</span>(!is)&#123;  </div><div class="line">        filex.<span class="built_in">mkdir</span>();<span class="comment">//创建文件夹  </span></div><div class="line">        <span class="comment">//filex.createNewFile();//创建文件  </span></div><div class="line">    &#125;  </div><div class="line"><span class="comment">/*方法2*/</span>  </div><div class="line"><span class="built_in">if</span>(is)&#123;  </div><div class="line">    <span class="keyword">String</span> path=file.getAbsolutePath();  </div><div class="line">    <span class="keyword">String</span> name=<span class="string">"test.txt"</span>;<span class="comment">//你要新建的文件夹名或者文件名  </span></div><div class="line">    <span class="built_in">File</span> filex=<span class="keyword">new</span> <span class="built_in">File</span>(path,name);<span class="comment">//方法1和方法2的区别在于此  </span></div><div class="line">    <span class="keyword">boolean</span> is=filex.<span class="built_in">exists</span>();<span class="comment">//判断文件（夹）是否存在  </span></div><div class="line">    <span class="built_in">if</span>(!is)&#123;  </div><div class="line">        filex.<span class="built_in">mkdir</span>();<span class="comment">//创建文件夹  </span></div><div class="line">        <span class="comment">//filex.createNewFile();//创建文件  </span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>###重命名文件（夹）</p>
-<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">File</span> <span class="keyword">file</span>=……  </div><div class="line"><span class="built_in">String</span> parentPath=<span class="keyword">file</span>.getParent();  </div><div class="line"><span class="built_in">String</span> newName=<span class="string">"name"</span>;//重命名后的文件或者文件夹名  </div><div class="line"><span class="keyword">File</span> filex=<span class="keyword">new</span> <span class="keyword">File</span>(parentPath,newName);//<span class="keyword">File</span> filex=<span class="keyword">new</span> <span class="keyword">File</span>(parentPaht+newName)  </div><div class="line"><span class="keyword">file</span>.renameTo(filex);</div></pre></td></tr></table></figure>
-<p>###删除文件（夹）</p>
-<figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">File</span> <span class="keyword">file</span>=……  </div><div class="line"><span class="keyword">file</span>.<span class="keyword">delete</span>();<span class="comment">//立即删除  </span></div><div class="line"><span class="comment">//file.deleteOnExit();//程序退出后删除，只有正常退出才会删除</span></div></pre></td></tr></table></figure>
-<p><strong>原地址：Android入门之文件系统操作（二）文件操作相关指令</strong></p>
-<p>###<a href="http://blog.csdn.net/brokge/article/details/8543145" target="_blank" rel="external"><strong>view plainprint?</strong></a></p>
-<ul>
-<li>Android 2.3提供一个称为严苛模式（StrictMode）的调试特性</li>
-<li>唯一一篇讲到在2.3之前要怎么处理的文章</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">File</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/Android/File操作/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
     <article id="post-小故事/File操作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -929,6 +832,103 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/小故事/File操作/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-Android/File操作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/Android/File操作/">File操作</a>
+    </h1>
+  
+
+        
+        <a href="/Android/File操作/" class="archive-article-date">
+  	<time datetime="2015-12-16T07:38:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-12-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>###获取总根</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">File</span>[] fileList=<span class="built_in">File</span>.listRoots();  </div><div class="line"><span class="comment">//返回fileList.length为1  </span></div><div class="line"><span class="comment">//fileList.getAbsolutePath()为"/"  </span></div><div class="line"><span class="comment">//这就是系统的总根</span></div></pre></td></tr></table></figure>
+<p>###打开总根目录</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">File</span> file=new <span class="keyword">File</span>(<span class="string">"/"</span>);  </div><div class="line"><span class="keyword">File</span>[] fileList=file.listFiles();  </div><div class="line">//获取的目录中除了<span class="string">"/sdcard"</span>和<span class="string">"/system"</span>还有<span class="string">"/data"</span>、<span class="string">"/cache"</span>、<span class="string">"/dev"</span>等</div><div class="line">//Android的根目录并不像Symbian系统那样分为<span class="keyword">C</span>盘、<span class="keyword">D</span>盘、<span class="keyword">E</span>盘等  </div><div class="line">//Android是基于Linux的，只有目录，无所谓盘符</div></pre></td></tr></table></figure>
+<p>###获取系统存储根目录</p>
+<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">File</span> <span class="keyword">file</span>=Environment.getRootDirectory();//<span class="keyword">File</span> <span class="keyword">file</span>=<span class="keyword">new</span> <span class="keyword">File</span>(<span class="string">"/system"</span>);  </div><div class="line"><span class="keyword">File</span>[] fileList=<span class="keyword">file</span>.listFiles();  </div><div class="line">//这里说的系统仅仅指<span class="string">"/system"</span>  </div><div class="line">//不包括外部存储的手机存储的范围远远大于所谓的系统存储</div></pre></td></tr></table></figure>
+<p>###获取SD卡存储根目录</p>
+<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">File</span> <span class="keyword">file</span>=Environment.getExternalStorageDirectory();//<span class="keyword">File</span> <span class="keyword">file</span>=<span class="keyword">new</span> <span class="keyword">File</span>(<span class="string">"/sdcard"</span>);  </div><div class="line"><span class="keyword">File</span>[] fileList=<span class="keyword">file</span>.listFiles();  </div><div class="line">//要获取SD卡首先要确认SD卡是否装载  </div><div class="line"><span class="built_in">boolean</span> <span class="keyword">is</span>=Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED);  </div><div class="line">//如果<span class="literal">true</span>，则已装载  </div><div class="line">//如果<span class="literal">false</span>，则未装载</div></pre></td></tr></table></figure>
+<p>###获取data根目录</p>
+<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">File</span> <span class="keyword">file</span>=Environment.getDataDirectory();//<span class="keyword">File</span> <span class="keyword">file</span>=<span class="keyword">new</span> <span class="keyword">File</span>(<span class="string">"/data"</span>);  </div><div class="line"><span class="keyword">File</span>[] fileList=<span class="keyword">file</span>.listFiles();  </div><div class="line">//由于data文件夹是android里一个非常重要的文件夹，所以一般权限是无法获取到文件的，即fileList.length返回为<span class="number">0</span></div></pre></td></tr></table></figure>
+<p>###获取私有文件路径</p>
+<figure class="highlight delphi"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Context context=this;<span class="comment">//首先，在Activity里获取context  </span></div><div class="line"><span class="keyword">File</span> <span class="keyword">file</span>=context.getFilesDir();  </div><div class="line"><span class="keyword">String</span> path=<span class="keyword">file</span>.getAbsolutePath();  </div><div class="line"><span class="comment">//此处返回的路劲为/data/data/包/files，其中的包就是我们建立的主Activity所在的包  </span></div><div class="line"><span class="comment">//我们可以看到这个路径也是在data文件夹下  </span></div><div class="line"><span class="comment">//程序本身是可以对自己的私有文件进行操作  </span></div><div class="line"><span class="comment">//程序中很多私有的数据会写入到私有文件路径下，这也是android为什么对data数据做保护的原因之一</span></div></pre></td></tr></table></figure>
+<p>###获取文件（夹）绝对路径、相对路劲、文件（夹）名、父目录</p>
+<figure class="highlight delphi"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">File</span> <span class="keyword">file</span>=……  </div><div class="line"><span class="keyword">String</span> relativePath=<span class="keyword">file</span>.getPath();<span class="comment">//相对路径  </span></div><div class="line"><span class="keyword">String</span> absolutePath=<span class="keyword">file</span>.getAbsolutePath();<span class="comment">//绝对路径  </span></div><div class="line"><span class="keyword">String</span> fileName=<span class="keyword">file</span>.getName();<span class="comment">//文件（夹）名  </span></div><div class="line"><span class="keyword">String</span> parentPath=<span class="keyword">file</span>.getParent();<span class="comment">//父目录</span></div></pre></td></tr></table></figure>
+<p>###列出文件夹下的所有文件和文件夹</p>
+<figure class="highlight delphi"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">File</span> <span class="keyword">file</span>=……  </div><div class="line"><span class="keyword">File</span>[] fileList=<span class="keyword">file</span>.listFiles();</div></pre></td></tr></table></figure>
+<p>###判断是文件还是文件夹</p>
+<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">File</span> <span class="keyword">file</span>=……  </div><div class="line"><span class="built_in">boolean</span> <span class="keyword">is</span>=<span class="keyword">file</span>.isDirectory();//<span class="literal">true</span>-是，<span class="literal">false</span>-否</div></pre></td></tr></table></figure>
+<p>###判断文件（夹）是否存在</p>
+<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">File</span> <span class="keyword">file</span>=……  </div><div class="line"><span class="built_in">boolean</span> <span class="keyword">is</span>=<span class="keyword">file</span>.exists();//<span class="literal">true</span>-是，<span class="literal">false</span>-否</div></pre></td></tr></table></figure>
+<p>###新建文件（夹）</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">File</span> file=……  </div><div class="line">oolean is=file.<span class="built_in">isDirectory</span>();<span class="comment">//判断是否为文件夹  </span></div><div class="line"><span class="comment">/*方法1*/</span>  </div><div class="line"><span class="built_in">if</span>(is)&#123;  </div><div class="line">    <span class="keyword">String</span> path=file.getAbsolutePath();  </div><div class="line">    <span class="keyword">String</span> name=<span class="string">"ABC"</span>;<span class="comment">//你要新建的文件夹名或者文件名  </span></div><div class="line">    <span class="keyword">String</span> pathx=path+name;  </div><div class="line">    <span class="built_in">File</span> filex=<span class="keyword">new</span> <span class="built_in">File</span>(pathx);  </div><div class="line">    <span class="keyword">boolean</span> is=filex.<span class="built_in">exists</span>();<span class="comment">//判断文件（夹）是否存在  </span></div><div class="line">    <span class="built_in">if</span>(!is)&#123;  </div><div class="line">        filex.<span class="built_in">mkdir</span>();<span class="comment">//创建文件夹  </span></div><div class="line">        <span class="comment">//filex.createNewFile();//创建文件  </span></div><div class="line">    &#125;  </div><div class="line"><span class="comment">/*方法2*/</span>  </div><div class="line"><span class="built_in">if</span>(is)&#123;  </div><div class="line">    <span class="keyword">String</span> path=file.getAbsolutePath();  </div><div class="line">    <span class="keyword">String</span> name=<span class="string">"test.txt"</span>;<span class="comment">//你要新建的文件夹名或者文件名  </span></div><div class="line">    <span class="built_in">File</span> filex=<span class="keyword">new</span> <span class="built_in">File</span>(path,name);<span class="comment">//方法1和方法2的区别在于此  </span></div><div class="line">    <span class="keyword">boolean</span> is=filex.<span class="built_in">exists</span>();<span class="comment">//判断文件（夹）是否存在  </span></div><div class="line">    <span class="built_in">if</span>(!is)&#123;  </div><div class="line">        filex.<span class="built_in">mkdir</span>();<span class="comment">//创建文件夹  </span></div><div class="line">        <span class="comment">//filex.createNewFile();//创建文件  </span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>###重命名文件（夹）</p>
+<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">File</span> <span class="keyword">file</span>=……  </div><div class="line"><span class="built_in">String</span> parentPath=<span class="keyword">file</span>.getParent();  </div><div class="line"><span class="built_in">String</span> newName=<span class="string">"name"</span>;//重命名后的文件或者文件夹名  </div><div class="line"><span class="keyword">File</span> filex=<span class="keyword">new</span> <span class="keyword">File</span>(parentPath,newName);//<span class="keyword">File</span> filex=<span class="keyword">new</span> <span class="keyword">File</span>(parentPaht+newName)  </div><div class="line"><span class="keyword">file</span>.renameTo(filex);</div></pre></td></tr></table></figure>
+<p>###删除文件（夹）</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">File</span> <span class="keyword">file</span>=……  </div><div class="line"><span class="keyword">file</span>.<span class="keyword">delete</span>();<span class="comment">//立即删除  </span></div><div class="line"><span class="comment">//file.deleteOnExit();//程序退出后删除，只有正常退出才会删除</span></div></pre></td></tr></table></figure>
+<p><strong>原地址：Android入门之文件系统操作（二）文件操作相关指令</strong></p>
+<p>###<a href="http://blog.csdn.net/brokge/article/details/8543145" target="_blank" rel="external"><strong>view plainprint?</strong></a></p>
+<ul>
+<li>Android 2.3提供一个称为严苛模式（StrictMode）的调试特性</li>
+<li>唯一一篇讲到在2.3之前要怎么处理的文章</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">File</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/Android/File操作/">展开全文 >></a>
         </p>
       
 
@@ -1051,10 +1051,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Utils</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
@@ -1063,15 +1059,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">String</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">TextView</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">EditText</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">String</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Utils</a>
               </li>
             
             <div class="clearfix"></div>
