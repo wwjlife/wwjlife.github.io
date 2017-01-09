@@ -6,17 +6,51 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/wwjlife">
-  <title>Archives: 2015 | Wenjuan De Life</title>
+  <title>Android Studio添加依赖库 | Wenjuan De Life</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="文艺">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Wenjuan De Life">
-<meta property="og:url" content="https://github.com/wwjlife/archives/2015/index.html">
+  <meta name="description" content="在Android Studio有不同的依赖添加：
+
+添加自己下载的依赖
+
+
+1.添加下载的jar包：这个我想大家都都知道，直接放在//build/libs下点击modulesetting，点击module找到dependencies，然后点击添加File dependency。
+
+
+添加一些依赖的开源项目
+
+
+首先在project创建一个跟你module同级目录library（名字随你）-&amp;gt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android Studio添加依赖库">
+<meta property="og:url" content="https://github.com/wwjlife/Android/Android studio添加依赖库/index.html">
 <meta property="og:site_name" content="Wenjuan De Life">
-<meta property="og:description" content="文艺">
+<meta property="og:description" content="在Android Studio有不同的依赖添加：
+
+添加自己下载的依赖
+
+
+1.添加下载的jar包：这个我想大家都都知道，直接放在//build/libs下点击modulesetting，点击module找到dependencies，然后点击添加File dependency。
+
+
+添加一些依赖的开源项目
+
+
+首先在project创建一个跟你module同级目录library（名字随你）-&amp;gt;">
+<meta property="og:updated_time" content="2017-01-09T14:20:11.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Wenjuan De Life">
-<meta name="twitter:description" content="文艺">
+<meta name="twitter:title" content="Android Studio添加依赖库">
+<meta name="twitter:description" content="在Android Studio有不同的依赖添加：
+
+添加自己下载的依赖
+
+
+1.添加下载的jar包：这个我想大家都都知道，直接放在//build/libs下点击modulesetting，点击module找到dependencies，然后点击添加File dependency。
+
+
+添加一些依赖的开源项目
+
+
+首先在project创建一个跟你module同级目录library（名字随你）-&amp;gt;">
   
     <link rel="alternative" href="/atom.xml" title="Wenjuan De Life" type="application/atom+xml">
   
@@ -162,36 +196,69 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Android/Android studio添加依赖库" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/Android/File操作/" class="archive-article-date">
-  	<time datetime="2015-12-16T07:38:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-12-16</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Android/File操作/">File操作</a>
+    <h1 class="article-title" itemprop="name">
+      Android Studio添加依赖库
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/Android/Android studio添加依赖库/" class="archive-article-date">
+  	<time datetime="2016-02-24T10:04:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-02-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在Android Studio有不同的依赖添加：</p>
+<ul>
+<li>添加自己下载的依赖</li>
+</ul>
+<blockquote>
+<p>1.添加下载的jar包：这个我想大家都都知道，直接放在<youproject>/<yourmodule>/build/libs下点击module<br>setting，点击module找到dependencies，然后点击添加File dependency。</yourmodule></youproject></p>
+</blockquote>
+<ul>
+<li>添加一些依赖的开源项目</li>
+</ul>
+<blockquote>
+<p>首先在project创建一个跟你module同级目录library（名字随你）-&gt; 把你下载的开源项目（library为例）放进这个文件夹<br>-&gt; 编辑settings.gradle，添加：include ‘:myModule’, ‘:library’ -&gt; 编辑你的module下的build.gradle文件，如下：</p>
+</blockquote>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">dependencies</span> &#123;</div><div class="line">    <span class="keyword">compile</span> <span class="keyword">fileTree</span>(dir: <span class="string">'libs'</span>, <span class="keyword">include</span>: [<span class="string">'*.jar'</span>])</div><div class="line">    testCompile <span class="string">'junit:junit:4.12'</span></div><div class="line">    <span class="keyword">compile</span> <span class="string">'com.android.support:appcompat-v7:22.2.1'</span><span class="comment">//调用远程代码</span></div><div class="line">    <span class="keyword">compile</span> <span class="string">'com.android.support:recyclerview-v7:22.2.1'</span></div><div class="line">    <span class="keyword">compile</span> <span class="keyword">project</span>(<span class="string">':library'</span>)<span class="comment">//添加这行代码</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -201,25 +268,103 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">File</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Android Studio添加依赖库</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://github.com/wwjlife/Android/Android studio添加依赖库/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/Android/String/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          String
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/Android/Utils/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">utils</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-    
+
 
 
           </div>
@@ -242,8 +387,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
