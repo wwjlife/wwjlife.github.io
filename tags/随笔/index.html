@@ -6,27 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/wwjlife">
-  <title>File操作 | Wenjuan De Life</title>
+  <title>Tag: 随笔 | Wenjuan De Life</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="###获取总根
-1234File[] fileList=File.listRoots();  //返回fileList.length为1  //fileList.getAbsolutePath()为&quot;/&quot;  //这就是系统的总根
-###打开总根目录
-12345File file=new File(&quot;/&quot;);  File[] fileList=file.listFiles();  //获取的目录中除">
-<meta property="og:type" content="article">
-<meta property="og:title" content="File操作">
-<meta property="og:url" content="https://github.com/wwjlife/Android/File操作/index.html">
+  <meta name="description" content="文艺">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Wenjuan De Life">
+<meta property="og:url" content="https://github.com/wwjlife/tags/随笔/index.html">
 <meta property="og:site_name" content="Wenjuan De Life">
-<meta property="og:description" content="###获取总根
-1234File[] fileList=File.listRoots();  //返回fileList.length为1  //fileList.getAbsolutePath()为&quot;/&quot;  //这就是系统的总根
-###打开总根目录
-12345File file=new File(&quot;/&quot;);  File[] fileList=file.listFiles();  //获取的目录中除">
-<meta property="og:updated_time" content="2017-01-09T14:20:13.000Z">
+<meta property="og:description" content="文艺">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="File操作">
-<meta name="twitter:description" content="###获取总根
-1234File[] fileList=File.listRoots();  //返回fileList.length为1  //fileList.getAbsolutePath()为&quot;/&quot;  //这就是系统的总根
-###打开总根目录
-12345File file=new File(&quot;/&quot;);  File[] fileList=file.listFiles();  //获取的目录中除">
+<meta name="twitter:title" content="Wenjuan De Life">
+<meta name="twitter:description" content="文艺">
   
     <link rel="alternative" href="/atom.xml" title="Wenjuan De Life" type="application/atom+xml">
   
@@ -172,211 +162,64 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Android/File操作" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      File操作
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2016" class="archive-year">2016</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/随笔/最初的你还在么/" class="archive-article-date">
+  	<time datetime="2016-05-27T13:21:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-05-27</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/随笔/最初的你还在么/">最初的你还在么？</a>
     </h1>
   
 
-        
-        <a href="/Android/File操作/" class="archive-article-date">
-  	<time datetime="2015-12-16T07:38:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-12-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>###获取总根</p>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">File</span>[] fileList=<span class="built_in">File</span>.listRoots();  </div><div class="line"><span class="comment">//返回fileList.length为1  </span></div><div class="line"><span class="comment">//fileList.getAbsolutePath()为"/"  </span></div><div class="line"><span class="comment">//这就是系统的总根</span></div></pre></td></tr></table></figure>
-<p>###打开总根目录</p>
-<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">File</span> file=new <span class="keyword">File</span>(<span class="string">"/"</span>);  </div><div class="line"><span class="keyword">File</span>[] fileList=file.listFiles();  </div><div class="line">//获取的目录中除了<span class="string">"/sdcard"</span>和<span class="string">"/system"</span>还有<span class="string">"/data"</span>、<span class="string">"/cache"</span>、<span class="string">"/dev"</span>等</div><div class="line">//Android的根目录并不像Symbian系统那样分为<span class="keyword">C</span>盘、<span class="keyword">D</span>盘、<span class="keyword">E</span>盘等  </div><div class="line">//Android是基于Linux的，只有目录，无所谓盘符</div></pre></td></tr></table></figure>
-<p>###获取系统存储根目录</p>
-<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">File</span> <span class="keyword">file</span>=Environment.getRootDirectory();//<span class="keyword">File</span> <span class="keyword">file</span>=<span class="keyword">new</span> <span class="keyword">File</span>(<span class="string">"/system"</span>);  </div><div class="line"><span class="keyword">File</span>[] fileList=<span class="keyword">file</span>.listFiles();  </div><div class="line">//这里说的系统仅仅指<span class="string">"/system"</span>  </div><div class="line">//不包括外部存储的手机存储的范围远远大于所谓的系统存储</div></pre></td></tr></table></figure>
-<p>###获取SD卡存储根目录</p>
-<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">File</span> <span class="keyword">file</span>=Environment.getExternalStorageDirectory();//<span class="keyword">File</span> <span class="keyword">file</span>=<span class="keyword">new</span> <span class="keyword">File</span>(<span class="string">"/sdcard"</span>);  </div><div class="line"><span class="keyword">File</span>[] fileList=<span class="keyword">file</span>.listFiles();  </div><div class="line">//要获取SD卡首先要确认SD卡是否装载  </div><div class="line"><span class="built_in">boolean</span> <span class="keyword">is</span>=Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED);  </div><div class="line">//如果<span class="literal">true</span>，则已装载  </div><div class="line">//如果<span class="literal">false</span>，则未装载</div></pre></td></tr></table></figure>
-<p>###获取data根目录</p>
-<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">File</span> <span class="keyword">file</span>=Environment.getDataDirectory();//<span class="keyword">File</span> <span class="keyword">file</span>=<span class="keyword">new</span> <span class="keyword">File</span>(<span class="string">"/data"</span>);  </div><div class="line"><span class="keyword">File</span>[] fileList=<span class="keyword">file</span>.listFiles();  </div><div class="line">//由于data文件夹是android里一个非常重要的文件夹，所以一般权限是无法获取到文件的，即fileList.length返回为<span class="number">0</span></div></pre></td></tr></table></figure>
-<p>###获取私有文件路径</p>
-<figure class="highlight delphi"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Context context=this;<span class="comment">//首先，在Activity里获取context  </span></div><div class="line"><span class="keyword">File</span> <span class="keyword">file</span>=context.getFilesDir();  </div><div class="line"><span class="keyword">String</span> path=<span class="keyword">file</span>.getAbsolutePath();  </div><div class="line"><span class="comment">//此处返回的路劲为/data/data/包/files，其中的包就是我们建立的主Activity所在的包  </span></div><div class="line"><span class="comment">//我们可以看到这个路径也是在data文件夹下  </span></div><div class="line"><span class="comment">//程序本身是可以对自己的私有文件进行操作  </span></div><div class="line"><span class="comment">//程序中很多私有的数据会写入到私有文件路径下，这也是android为什么对data数据做保护的原因之一</span></div></pre></td></tr></table></figure>
-<p>###获取文件（夹）绝对路径、相对路劲、文件（夹）名、父目录</p>
-<figure class="highlight delphi"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">File</span> <span class="keyword">file</span>=……  </div><div class="line"><span class="keyword">String</span> relativePath=<span class="keyword">file</span>.getPath();<span class="comment">//相对路径  </span></div><div class="line"><span class="keyword">String</span> absolutePath=<span class="keyword">file</span>.getAbsolutePath();<span class="comment">//绝对路径  </span></div><div class="line"><span class="keyword">String</span> fileName=<span class="keyword">file</span>.getName();<span class="comment">//文件（夹）名  </span></div><div class="line"><span class="keyword">String</span> parentPath=<span class="keyword">file</span>.getParent();<span class="comment">//父目录</span></div></pre></td></tr></table></figure>
-<p>###列出文件夹下的所有文件和文件夹</p>
-<figure class="highlight delphi"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">File</span> <span class="keyword">file</span>=……  </div><div class="line"><span class="keyword">File</span>[] fileList=<span class="keyword">file</span>.listFiles();</div></pre></td></tr></table></figure>
-<p>###判断是文件还是文件夹</p>
-<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">File</span> <span class="keyword">file</span>=……  </div><div class="line"><span class="built_in">boolean</span> <span class="keyword">is</span>=<span class="keyword">file</span>.isDirectory();//<span class="literal">true</span>-是，<span class="literal">false</span>-否</div></pre></td></tr></table></figure>
-<p>###判断文件（夹）是否存在</p>
-<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">File</span> <span class="keyword">file</span>=……  </div><div class="line"><span class="built_in">boolean</span> <span class="keyword">is</span>=<span class="keyword">file</span>.exists();//<span class="literal">true</span>-是，<span class="literal">false</span>-否</div></pre></td></tr></table></figure>
-<p>###新建文件（夹）</p>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">File</span> file=……  </div><div class="line">oolean is=file.<span class="built_in">isDirectory</span>();<span class="comment">//判断是否为文件夹  </span></div><div class="line"><span class="comment">/*方法1*/</span>  </div><div class="line"><span class="built_in">if</span>(is)&#123;  </div><div class="line">    <span class="keyword">String</span> path=file.getAbsolutePath();  </div><div class="line">    <span class="keyword">String</span> name=<span class="string">"ABC"</span>;<span class="comment">//你要新建的文件夹名或者文件名  </span></div><div class="line">    <span class="keyword">String</span> pathx=path+name;  </div><div class="line">    <span class="built_in">File</span> filex=<span class="keyword">new</span> <span class="built_in">File</span>(pathx);  </div><div class="line">    <span class="keyword">boolean</span> is=filex.<span class="built_in">exists</span>();<span class="comment">//判断文件（夹）是否存在  </span></div><div class="line">    <span class="built_in">if</span>(!is)&#123;  </div><div class="line">        filex.<span class="built_in">mkdir</span>();<span class="comment">//创建文件夹  </span></div><div class="line">        <span class="comment">//filex.createNewFile();//创建文件  </span></div><div class="line">    &#125;  </div><div class="line"><span class="comment">/*方法2*/</span>  </div><div class="line"><span class="built_in">if</span>(is)&#123;  </div><div class="line">    <span class="keyword">String</span> path=file.getAbsolutePath();  </div><div class="line">    <span class="keyword">String</span> name=<span class="string">"test.txt"</span>;<span class="comment">//你要新建的文件夹名或者文件名  </span></div><div class="line">    <span class="built_in">File</span> filex=<span class="keyword">new</span> <span class="built_in">File</span>(path,name);<span class="comment">//方法1和方法2的区别在于此  </span></div><div class="line">    <span class="keyword">boolean</span> is=filex.<span class="built_in">exists</span>();<span class="comment">//判断文件（夹）是否存在  </span></div><div class="line">    <span class="built_in">if</span>(!is)&#123;  </div><div class="line">        filex.<span class="built_in">mkdir</span>();<span class="comment">//创建文件夹  </span></div><div class="line">        <span class="comment">//filex.createNewFile();//创建文件  </span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>###重命名文件（夹）</p>
-<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">File</span> <span class="keyword">file</span>=……  </div><div class="line"><span class="built_in">String</span> parentPath=<span class="keyword">file</span>.getParent();  </div><div class="line"><span class="built_in">String</span> newName=<span class="string">"name"</span>;//重命名后的文件或者文件夹名  </div><div class="line"><span class="keyword">File</span> filex=<span class="keyword">new</span> <span class="keyword">File</span>(parentPath,newName);//<span class="keyword">File</span> filex=<span class="keyword">new</span> <span class="keyword">File</span>(parentPaht+newName)  </div><div class="line"><span class="keyword">file</span>.renameTo(filex);</div></pre></td></tr></table></figure>
-<p>###删除文件（夹）</p>
-<figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">File</span> <span class="keyword">file</span>=……  </div><div class="line"><span class="keyword">file</span>.<span class="keyword">delete</span>();<span class="comment">//立即删除  </span></div><div class="line"><span class="comment">//file.deleteOnExit();//程序退出后删除，只有正常退出才会删除</span></div></pre></td></tr></table></figure>
-<p><strong>原地址：Android入门之文件系统操作（二）文件操作相关指令</strong></p>
-<p>###<a href="http://blog.csdn.net/brokge/article/details/8543145" target="_blank" rel="external"><strong>view plainprint?</strong></a></p>
-<ul>
-<li>Android 2.3提供一个称为严苛模式（StrictMode）的调试特性</li>
-<li>唯一一篇讲到在2.3之前要怎么处理的文章</li>
-</ul>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">File</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">初心，小故事</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://github.com/wwjlife/Android/File操作/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/Android/AndroidScroll/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Android Scroll
-        
-      </div>
-    </a>
   
   
-    <a href="/小故事/File操作/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">File操作</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-
-
-
-
-  
-  <div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="Android/File操作" data-title="File操作" data-url="https://github.com/wwjlife/Android/File操作/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"true"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
-
+    </div></section>
   
 
-
+    
 
 
           </div>
@@ -399,9 +242,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",
