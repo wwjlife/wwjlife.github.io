@@ -6,17 +6,42 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/wwjlife">
-  <title>Archives: 2016/1 | Wenjuan De Life</title>
+  <title>TextView／EditText | Wenjuan De Life</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="文艺">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Wenjuan De Life">
-<meta property="og:url" content="https://github.com/wwjlife/archives/2016/01/index.html">
+  <meta name="description" content="##TextView
+###常用
+
+android:singleLine设置单行显示
+android:textColor设置文本颜色
+android:textColorLink文字链接的颜色.
+android:textScaleX设置文字之间间隔，默认为1.0f
+android:textColorHighlight被选中文字的底色，默认为蓝色
+android:scrollHorizontally设">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TextView／EditText">
+<meta property="og:url" content="https://github.com/wwjlife/Android/TextView／EditText/index.html">
 <meta property="og:site_name" content="Wenjuan De Life">
-<meta property="og:description" content="文艺">
+<meta property="og:description" content="##TextView
+###常用
+
+android:singleLine设置单行显示
+android:textColor设置文本颜色
+android:textColorLink文字链接的颜色.
+android:textScaleX设置文字之间间隔，默认为1.0f
+android:textColorHighlight被选中文字的底色，默认为蓝色
+android:scrollHorizontally设">
+<meta property="og:updated_time" content="2017-01-09T14:20:20.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Wenjuan De Life">
-<meta name="twitter:description" content="文艺">
+<meta name="twitter:title" content="TextView／EditText">
+<meta name="twitter:description" content="##TextView
+###常用
+
+android:singleLine设置单行显示
+android:textColor设置文本颜色
+android:textColorLink文字链接的颜色.
+android:textScaleX设置文字之间间隔，默认为1.0f
+android:textColorHighlight被选中文字的底色，默认为蓝色
+android:scrollHorizontally设">
   
     <link rel="alternative" href="/atom.xml" title="Wenjuan De Life" type="application/atom+xml">
   
@@ -180,36 +205,136 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Android/TextView／EditText" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/Android/AndroidScroll/" class="archive-article-date">
-  	<time datetime="2016-01-12T07:31:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-01-12</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Android/AndroidScroll/">Android Scroll</a>
+    <h1 class="article-title" itemprop="name">
+      TextView／EditText
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/Android/TextView／EditText/" class="archive-article-date">
+  	<time datetime="2016-02-24T13:21:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-02-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##TextView</p>
+<p>###常用</p>
+<ul>
+<li>android:singleLine设置单行显示</li>
+<li>android:textColor设置文本颜色</li>
+<li>android:textColorLink文字链接的颜色.</li>
+<li>android:textScaleX设置文字之间间隔，默认为1.0f</li>
+<li>android:textColorHighlight被选中文字的底色，默认为蓝色</li>
+<li>android:scrollHorizontally设置文本超出TextView的宽度的情况下，是否出现横拉条。</li>
+<li>android:hintText为空时显示的文字提示信息</li>
+<li>android:textColorHint设置提示信息文字的颜色，默认为灰色。与hint一起使用。</li>
+</ul>
+<p>###不常用</p>
+<p>####android:cursorVisible设定光标为显示/隐藏，默认显示。</p>
+<p>####android:ellipsize设置当文字过长时,该控件该如何显示。<br><strong>有如下值设置：</strong></p>
+<ul>
+<li>start——省略号显示在开头;</li>
+<li>end——省略号显示在结尾;</li>
+<li>middle—-省略号显示在中间;</li>
+<li>marquee——以跑马灯的方式显示(动画横向移动)<br>####android:textAppearance设置文字外观</li>
+</ul>
+<blockquote>
+<p>如 “?android:attr/textAppearanceLargeInverse”这里引用的是系统自带的一个外观，?表示系统是否有这种外观，否则使用默认的外观。可设置的值如下：<br>textAppearanceButton<br>textAppearanceInverse<br>textAppearanceLarge<br>textAppearanceLargeInverse<br>textAppearanceMedium<br>textAppearanceMediumInverse<br>textAppearanceSmall<br>textAppearanceSmallInverse</p>
+</blockquote>
+<p>####android:drawableLeft在text的左边输出一个drawable</p>
+<blockquote>
+<p>如果指定一个颜色的话会把text的背景设为该颜色，并且同时和background使用时覆盖后者。</p>
+</blockquote>
+<ul>
+<li>android:drawableLeft在text的左边输出一个drawable</li>
+<li>android:drawableRight在text的右边输出一个drawable</li>
+<li>android:drawableTop在text的正上方输出一个drawable</li>
+<li>android:drawableBottom在text的下方输出一个drawable<br>　<br>####android:drawablePadding设置text与drawable(图片)的间隔</li>
+</ul>
+<blockquote>
+<p>android:drawablePadding设置text与drawable(图片)的间隔，与drawableLeft、<br>drawableRight、drawableTop、drawableBottom一起使用，可设置为负数，单独使用没有效果。</p>
+<p>###TextView多行/字符个数设置宽度<br>android:ems设置TextView的宽度为N个字符的宽度。一个汉字字符宽度。<br>android:maxEms设置TextView的宽度为最长为N个字符的宽度。与ems同时使用时覆盖ems选项。<br>android:minEms设置TextView的宽度为最短为N个字符的宽度。与ems同时使用时覆盖ems选项。<br>android:maxLength限制显示的文本长度，超出部分不显示。<br>android:lines设置文本的行数，设置两行就显示两行，即使第二行没有数据。<br>android:maxLines设置文本的最大显示行数，与width或layout_width结合使用，超出部分自动换行，超出行数将不显示。<br>android:minLines设置文本的最小行数，与lines类似。<br>android:lineSpacingExtra设置行间距。<br>android:lineSpacingMultiplier设置行间距的倍数。如”1.2”</p>
+<p>###文本阴影<br>android:shadowColor指定文本阴影的颜色，需要shadowRadius一起使用。<br>android:shadowRadius设置阴影的半径。设置为0.1就变成字体的颜色了，一般设置为3.0的效果比较好。<br>android:shadowDx设置阴影横向坐标开始位置。<br>android:shadowDy设置阴影纵向坐标开始位置。</p>
+</blockquote>
+<p>###坑</p>
+<p>####多余空白</p>
+<blockquote>
+<p>android:includeFontPadding设置文本是否包含顶部和底部额外空白，默认为true。</p>
+<p>####设置指定输入法<br>android:inputMethod为文本指定输入法，需要完全限定名(完整的包名)。例如：com.google.android.inputmethod.pinyin，但是这里报错找不到。</p>
+<p>##EditText<br>EditText继承TextView，所以EditText具有TextView的属性特点</p>
+<p>###常用</p>
+</blockquote>
+<ul>
+<li>android:singleLine：设置单行输入，一旦设置为true，则文字不会自动换行。</li>
+<li>android:gray=”top”：多行中指针在第一行第一位置</li>
+<li>et.setSelection(et.length());：调整光标到最后一行</li>
+<li>android:hint：EditText为空时显示的文字提示信息</li>
+<li>android:textColorHint设置提示信息的颜色。</li>
+<li>android:capitalize ：设置英文字母大写类型。设置如下值：</li>
+<li>sentences仅第一个字母大写</li>
+<li>words每一个单词首字母大小，用空格区分单词</li>
+<li>characters每一个英文字母都大写。</li>
+<li>android:editable ：设置是否可编辑。仍然可以获取光标，但是无法输入。</li>
+<li>android:textColorHighlight=”#cccccc”：被选中文字的底色，默认为蓝色</li>
+<li>android:textColorHint=”#ffff00”：设置提示信息文字的颜色，默认为灰色</li>
+<li>android:textScaleX=”1.5”：控制字与字之间的间距</li>
+<li>android:typeface=”monospace”：字型<ul>
+<li>normal</li>
+<li>sans</li>
+<li>serif</li>
+<li>monospace</li>
+</ul>
+</li>
+</ul>
+<p>android:background=”@null”：空间背景，这里没有，指透明</p>
+<p>####android:inputType:设置文本的类型 </p>
+<blockquote>
+<p>android:inputType=”none”输入普通字符<br>android:inputType=”text”–输入普通字符<br>android:inputType=”textCapCharacters”–输入普通字符<br>android:inputType=”textCapWords”–单词首字母大小<br>android:inputType=”textCapSentences”–仅第一个字母大小<br>android:inputType=”textAutoCorrect”–前两个自动完成<br>android:inputType=”textAutoComplete”–前两个自动完成<br>android:inputType=”textMultiLine”–多行输入<br>android:inputType=”textImeMultiLine”–输入法多行（不一定支持）<br>android:inputType=”textNoSuggestions”–不提示<br>android:inputType=”textUri”–URI格式<br><strong>android:inputType=”textEmailAddress”–电子邮件地址格式</strong><br>android:inputType=”textEmailSubject”–邮件主题格式<br>android:inputType=”textShortMessage”–短消息格式<br>android:inputType=”textLongMessage”–长消息格式<br>android:inputType=”textPersonName”–人名格式<br>android:inputType=”textPostalAddress”–邮政格式<br><strong>android:inputType=”textPassword”–密码格式</strong><br><strong>android:inputType=”textVisiblePassword”–密码可见格式</strong><br>android:inputType=”textWebEditText”–作为网页表单的文本格式<br>android:inputType=”textFilter”–文本筛选格式<br>android:inputType=”textPhonetic”–拼音输入格式<br><strong>android:inputType=”number”–数字格式</strong><br><strong>android:inputType=”numberSigned”–有符号数字格式</strong><br><strong>android:inputType=”numberDecimal”–可以带小数点的浮点格式</strong><br>android:inputType=”datetime”<br>android:inputType=”date”–日期键盘<br> android:inputType=”time”–时间键盘</p>
+</blockquote>
+<p>###不常用</p>
+<p>####android:selectAllOnFocus如果文本是可选择的，让他获取焦点而不是将光标移动为文本的开始位置或者末尾位置。 TextView中设置后无效果。</p>
+<p>###几乎不用</p>
+<blockquote>
+<p>1.android:autoText ：自动拼写帮助。这里单独设置是没有效果的，可能需要其他输入法辅助才行</p>
+</blockquote>
+<p>###坑</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -219,25 +344,125 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Android Scroll</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">TextView</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">EditText</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://github.com/wwjlife/Android/TextView／EditText/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/Android/String/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          String
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/Android/Android studio添加依赖库/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Android Studio添加依赖库</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Android/TextView／EditText" data-title="TextView／EditText" data-url="https://github.com/wwjlife/Android/TextView／EditText/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
   
 
-    
+
 
 
           </div>
@@ -260,8 +485,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
