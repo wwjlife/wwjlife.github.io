@@ -343,6 +343,101 @@
 
 
   
+    <article id="post-小故事/adb" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/小故事/adb/">abd</a>
+    </h1>
+  
+
+        
+        <a href="/小故事/adb/" class="archive-article-date">
+  	<time datetime="2017-01-07T07:38:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="abd-command-not-found-md"><a href="#abd-command-not-found-md" class="headerlink" title="abd: command not found.md"></a>abd: command not found.md</h1><hr>
+<p>在Mac系统中，第一次在Android SDK中使用adb的时候回无法使用。提示-bash: abd: command not found。原因是：未配置Android的环境变量。因此，您需为Mac中的Android SDK配置环境变量。</p>
+<ul>
+<li>启动Mac自带的终端Terminal。</li>
+<li>进入当前用户的根目录。// 比如我的/Users/y<em>*</em>i/</li>
+<li>用vim打开「创建」.bash_profile文件。</li>
+<li><p>输入export PATH=${PATH}:/Users/y<strong>i/Library/Android/sdk/platform-tools:/Users/y</strong>i/Library/Android/sdk/tools并保存就可以了</p>
+<blockquote>
+<p>注意：如果需要添加多个路径到PATH下时，需要用“:”(英文的冒号)隔开。</p>
+</blockquote>
+</li>
+<li><p>更新刚配置的环境变量<br>  在命令行中输入source .bash_profile </p>
+</li>
+<li>验证配置是否成功<br>输入adb，如果没有出现-bash: adb: command not found；而出现adb的命令参数解释。则表明环境变量配置成功。</li>
+</ul>
+<hr>
+<blockquote>
+<p>电脑重启以后adb命令就不能用了，需要touch 一下，怎么破</p>
+</blockquote>
+<ul>
+<li>在.zshrc中添加一行：source ~/.bash_profile</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">小故事</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">bug</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">android</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">meteor</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/小故事/adb/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-小故事/File操作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -363,10 +458,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>###获取总根</p>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">File</span>[] fileList=<span class="built_in">File</span>.listRoots();  </div><div class="line"><span class="comment">//返回fileList.length为1  </span></div><div class="line"><span class="comment">//fileList.getAbsolutePath()为"/"  </span></div><div class="line"><span class="comment">//这就是系统的总根</span></div></pre></td></tr></table></figure>
-<p>###打开总根目录</p>
-<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">File</span> file=new <span class="keyword">File</span>(<span class="string">"/"</span>);  </div><div class="line"><span class="keyword">File</span>[] fileList=file.listFiles();  </div><div class="line">//获取的目录中除了<span class="string">"/sdcard"</span>和<span class="string">"/system"</span>还有<span class="string">"/data"</span>、<span class="string">"/cache"</span>、<span class="string">"/dev"</span>等</div><div class="line">//Android的根目录并不像Symbian系统那样分为<span class="keyword">C</span>盘、<span class="keyword">D</span>盘、<span class="keyword">E</span>盘等  </div><div class="line">//Android是基于Linux的，只有目录，无所谓盘符</div></pre></td></tr></table></figure>
+        <h3 id="获取总根"><a href="#获取总根" class="headerlink" title="获取总根"></a>获取总根</h3><figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">File</span>[] fileList=<span class="built_in">File</span>.listRoots();  </div><div class="line"><span class="comment">//返回fileList.length为1  </span></div><div class="line"><span class="comment">//fileList.getAbsolutePath()为"/"  </span></div><div class="line"><span class="comment">//这就是系统的总根</span></div></pre></td></tr></table></figure>
+<h3 id="打开总根目录"><a href="#打开总根目录" class="headerlink" title="打开总根目录"></a>打开总根目录</h3><figure class="highlight mathematica"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">File</span> file=new <span class="keyword">File</span>(<span class="string">"/"</span>);  </div><div class="line"><span class="keyword">File</span>[] fileList=file.listFiles();  </div><div class="line">//获取的目录中除了<span class="string">"/sdcard"</span>和<span class="string">"/system"</span>还有<span class="string">"/data"</span>、<span class="string">"/cache"</span>、<span class="string">"/dev"</span>等</div><div class="line">//Android的根目录并不像Symbian系统那样分为<span class="keyword">C</span>盘、<span class="keyword">D</span>盘、<span class="keyword">E</span>盘等  </div><div class="line">//Android是基于Linux的，只有目录，无所谓盘符</div></pre></td></tr></table></figure>
 <p>###获取系统存储根目录</p>
 <figure class="highlight vhdl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">File</span> <span class="keyword">file</span>=Environment.getRootDirectory();//<span class="keyword">File</span> <span class="keyword">file</span>=<span class="keyword">new</span> <span class="keyword">File</span>(<span class="string">"/system"</span>);  </div><div class="line"><span class="keyword">File</span>[] fileList=<span class="keyword">file</span>.listFiles();  </div><div class="line">//这里说的系统仅仅指<span class="string">"/system"</span>  </div><div class="line">//不包括外部存储的手机存储的范围远远大于所谓的系统存储</div></pre></td></tr></table></figure>
 <p>###获取SD卡存储根目录</p>
@@ -550,6 +643,14 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">File</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
@@ -570,11 +671,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">File</a>
+                <a href="javascript:void(0)" class="js-tag color4">bug</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+                <a href="javascript:void(0)" class="js-tag color3">android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">meteor</a>
               </li>
             
             <div class="clearfix"></div>
